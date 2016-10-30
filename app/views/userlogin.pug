@@ -6,13 +6,20 @@ html(lang="en")
     head
         title Hive - Login
 
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+
     body
         div.container
             h3 Login
             form.form-horizontal(method='post', action ='/login')
                 div.form-group
                     label.col-sm-2.control-label(for="username") Username:
-                    input#name.form-control(type="text", name="username", placeholder="username")
+                    div.col-sm-10
+                        input#name.form-control(type="text", name="username", placeholder="username")
+                    label.col-sm-2.control-label(for="password") Password:
+                    div.col-sm-10
+                        input#password.form-control(type="password", name = "password")
 
                 div.form-group
                     button.btn.btn-default(type="submit") Submit
