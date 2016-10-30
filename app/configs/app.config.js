@@ -1,3 +1,4 @@
 module.exports = exports = {
-  name : 'hive-adminportal'
+  name : 'hive-adminportal',
+  api_address: 'http://localhost:5000'
 };
