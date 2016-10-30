@@ -1,0 +1,18 @@
+//
+   Created by voot on 10/30/16.
+
+doctype html
+html(lang="en")
+    head
+        title Hive - Login
+
+    body
+        div.container
+            h3 Login
+            form.form-horizontal(method='post', action ='/login')
+                div.form-group
+                    label.col-sm-2.control-label(for="username") Username:
+                    input#name.form-control(type="text", name="username", placeholder="username")
+
+                div.form-group
+                    button.btn.btn-default(type="submit") Submit
