@@ -22,7 +22,7 @@ function initPassport (app) {
             .send(userData)
             .end(function (err, resp) {
             if (err) {
-                return done (err,false);
+                return done (null,false);
             } else {
                 token = resp.body.token;
             }
