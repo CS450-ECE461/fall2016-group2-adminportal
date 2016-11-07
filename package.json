@@ -3,12 +3,10 @@
   "description": "",
   "version": "0.0.1",
   "private": true,
-  
   "scripts": {
     "test": "env NODE_ENV=test mocha --recursive tests/tests",
     "start": "node ./app"
   },
-  
   "dependencies": {
     "@onehilltech/blueprint": "^1.1.1",
     "@onehilltech/blueprint-mongodb" : "^0.9.1",
@@ -18,13 +16,8 @@
     "supertest": "^2.0.1",
     "passport": "^0.3.2",
   },
-  
-  "devDependencies": {
-    
-  },
-  
+  "devDependencies": {},
   "license": "Apache-2.0",
-  
   "engines": {
     "node": ">=4.0.0",
     "npm": ">=3.0.0"

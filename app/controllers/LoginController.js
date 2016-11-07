@@ -10,8 +10,6 @@ function LoginController () {
 blueprint.controller (LoginController);
 
 LoginController.prototype.login = function () {
-    //This is the function that requests from the api and logs user in
-  //var self = this;
   return function (req, res) {
     var token;
       
