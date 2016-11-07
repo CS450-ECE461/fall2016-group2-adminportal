@@ -21,7 +21,7 @@ LoginController.prototype.login = function () {
     };
     
     request
-      .post('localhost:5000/login')
+      .post('localhost:5000/admin/login')
       .send(userData)
       .end(function (err, resp) {
         if (err) {
@@ -32,7 +32,7 @@ LoginController.prototype.login = function () {
         }
         
         if(token) {
-          return res.render(loggedin.pug,{});
+          return res.render('loggedin.pug',{});
         } else {
           return res.render('login.pug', {message: "Error authenticating account."});
         }
