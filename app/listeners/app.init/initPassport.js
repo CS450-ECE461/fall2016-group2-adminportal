@@ -10,8 +10,6 @@ function initPassport (app) {
     passport.use (new LocalStrategy (opts, authorize));
     
     function authorize (username, password, done) {
-        console.log(username);
-        console.log(password);
         var token;
       
         var userData = {
@@ -27,7 +25,6 @@ function initPassport (app) {
                 return done (err,false);
             } else {
                 token = resp.body.token;
-                console.log(token);
             }
             return done (null,token);
             
