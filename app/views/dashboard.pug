@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
     head
-        title Logged In
+        title Admin Dashboard
         
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
@@ -11,7 +11,7 @@ html(lang="en")
         div.container
             h1 You have now logged in!
             
-            form.form-horizontal(method='post', action='/loggedin')
+            form.form-horizontal(method='post', action='/dashboard')
                 div.col-sm-offset-2.col-sm-10
                     button.btn.btn-default(type="submit") Logout
                     

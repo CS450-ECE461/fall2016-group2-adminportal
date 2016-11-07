@@ -1,6 +1,11 @@
+var passport = require ('passport')
+  ;
+
 module.exports = exports = {
   '/login' : {
     get  : { view   : 'login.pug' },
-    post : { action : 'LoginController@login'},
+    post : {
+      before : [passport.authenticate ('local',{failureRedirect: '/login'})],
+      action : 'LoginController@login'}
   }
 };

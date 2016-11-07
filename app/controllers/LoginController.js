@@ -11,31 +11,9 @@ blueprint.controller (LoginController);
 
 LoginController.prototype.login = function () {
   return function (req, res) {
-    var token;
-      
-    var userData = {
-      "username" : req.body.name,
-      "password" : req.body.password
-    };
     
-    request
-      .post('localhost:5000/admin/login')
-      .send(userData)
-      .end(function (err, resp) {
-        if (err) {
-          console.log(err);
-        } else {
-          token = resp.body.token;
-          console.log(token);
-        }
-        
-        if(token) {
-          return res.render('loggedin.pug',{});
-        } else {
-          return res.render('login.pug', {message: "Error authenticating account."});
-        }
-        
-      });
+    return res.redirect('/dashboard');
+
   };
 };
 

@@ -2,18 +2,18 @@ var blueprint = require ('@onehilltech/blueprint')
   , util      = require ('util')
   ;
   
-function DefaultController () {
+function DashboardController () {
     blueprint.BaseController.call (this);
 }
 
-blueprint.controller (DefaultController);
+blueprint.controller (DashboardController);
 
-DefaultController.prototype.landing = function () {
-    
-    
+DashboardController.prototype.logout = function () {
+
     return function (req, res) {
+        req.logout ();
         return res.redirect ('/login');
     };
 };
 
-module.exports = exports = DefaultController;
+module.exports = exports = DashboardController;
