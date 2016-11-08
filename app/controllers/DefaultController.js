@@ -9,8 +9,6 @@ function DefaultController () {
 blueprint.controller (DefaultController);
 
 DefaultController.prototype.landing = function () {
-    
-    
     return function (req, res) {
         return res.redirect ('/login');
     };

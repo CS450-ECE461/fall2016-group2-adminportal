@@ -21,9 +21,16 @@ function initPassport (app) {
             .post('localhost:5000/admin/login')
             .send(userData)
             .end(function (err, resp) {
-            if (err) {
+            if(err) {
+                if (err.status == '400') {
+                    return done (null,false,{message: "Password is incorrect."});
+                } else if (err.status == '401') {
+                    return done (null,false,{message: "User is not an admin."});
+                }
+                    
                 return done (err,false);
-            } else {
+                
+            }else {
                 token = resp.body.token;
             }
             return done (null,token);
