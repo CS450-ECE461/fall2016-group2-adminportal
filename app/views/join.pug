@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+    head
+        title Join Hive
+
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+
+    body
+        div.container
+            h1 Join Hive
+
+            form.form-horizontal(method='post', action='/join')
+                div.form-group
+                    label.col-sm-2.control-label(for="name") Organization Name
+                    div.col-sm-2
+                        input#name.form-control(type="text", name="name", placeholder="WorkityWorkWork")
+
+                div.form-group
+                    label.col-sm-2.control-label(for="location") Location
+                    div.col-sm-2
+                        input#location.form-control(type="text", name="location", placeholder="Scranton")
+
+                div.form-group
+                    label.col-sm-2.control-label(for="website") Website
+                    div.col-sm-2
+                        input#location.form-control(type="text", name="website", placeholder="www.doingwork.com")
+
+                div.form-group
+                    label.col-sm-2.control-label(for="industry") Industry
+                    div.col-sm-2
+                        input#location.form-control(type="text", name="industry", placeholder="Tooling")
+
+                div.form-group
+                    label.col-sm-2.control-label(for="email") Email
+                    div.col-sm-2
+                        input#email.form-control(type="text", name="email", placeholder="admin@doingwork.com")
+
+                div.form-group
+                    div.col-sm-offset-2.col-sm-2
+                        button.btn.btn-default(type="submit") Join
+
+        blockquote #{message}
