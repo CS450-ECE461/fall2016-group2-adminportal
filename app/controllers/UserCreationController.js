@@ -42,7 +42,7 @@ UserCreationController.prototype.createUser = function () {
         };
 
 
-        // create the request
+        // create the request and save the result of it.
         var result = request
             .post(apiAddr + '/users') // Is a post request to /users
 
@@ -54,7 +54,7 @@ UserCreationController.prototype.createUser = function () {
                 if (err) throw err;
 
                 //console.log(res);
-                return res;
+                return res; // make sure we send our results back up.
             })//get back the server response
         ;
         //console.log(result);
