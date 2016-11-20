@@ -1,7 +1,8 @@
 var blueprint   = require ('@onehilltech/blueprint')
     //, database  = require ('@onehilltech/blueprint-mongodb')
     , util      = require ('util')
-    , request   = require ('supertest')
+    , request   = require ('superagent')
+    , http = require('http')
 
     ;
 var apiAddr = 'http://localhost:5000';
@@ -18,24 +19,19 @@ function UserCreationController () {
 blueprint.controller (UserCreationController);
 
 UserCreationController.prototype.createUser = function () {
+
     return function createUser(req, res) {
         var self = this;
 
         //step 1: send account creation request to gate keeper on API server
         //TODO
 
-        //Step 1a: get _id from request's response
+        //Step 1a: get _id (for gatekeeper) from request's response
+        //for testing purposes:
         var userID = res._id;
 
-        //Step 2: Update User Info
-
-
+        //Step 2: get user info
         //Step 2a: make a PUT request to API w/ the returned _id
-        // and a user with the following (all strings):
-        // org_ID (TODO)
-        // email
-        // username
-        // password
         var user = {user: {
                 email: req.body.email,
                 username: req.body.username,
@@ -45,21 +41,31 @@ UserCreationController.prototype.createUser = function () {
             }
         };
 
-        request(apiAddr)
-            .post('/users')
-            // needs some sort of header something
-            .send(user) //This will probably need more overall stuff.
+
+        // create the request
+        var result = request
+            .post(apiAddr + '/users') // Is a post request to /users
+
+            // Step 4: Send the User object to api server
+            .send(user) // sends the request with user information.
+
+            // after we get a response, check if there are errors
             .end(function(err, res){
                 if (err) throw err;
-            })
 
+                //console.log(res);
+                return res;
+            })//get back the server response
         ;
+        //console.log(result);
+
+        // finally, send the end user to a page saying if the user was created
+        return res.render('usercreated.pug', {username: result._data.user.username});
 
 
         // Step 3: Encrypt
         // TODO
 
-        // Step 4: Send the User object to API w/ PUT request
 
         // Step 4a: User data as req.body and token as in req.headers
         // Step 4b: send to http:// *addr* :5000/users/:userId
