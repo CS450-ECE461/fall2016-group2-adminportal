@@ -7,11 +7,6 @@ var blueprint   = require ('@onehilltech/blueprint')
     ;
 var apiAddr = 'http://localhost:5000';
 
-//blueprint.on('app.init', function (app){
-//    apiAddr = app.configs.app.api_address;
-//});
-
-
 function UserCreationController () {
     blueprint.BaseController.call (this);
 }
@@ -57,8 +52,6 @@ UserCreationController.prototype.createUser = function () {
                 return res; // make sure we send our results back up.
             })//get back the server response
         ;
-        //console.log(result);
-
         // finally, send the end user to a page saying if the user was created
         return res.render('usercreated.pug', {username: result._data.user.username});
 
@@ -72,17 +65,6 @@ UserCreationController.prototype.createUser = function () {
 
         // maybe do something
     }
-
-    /*
-    request('http://localhost:5000')
-        .get('/gatekeeper')
-        .end(function (err, res){
-            if (err) { return err;}
-
-
-            return res;
-        });
-        */
 };
 
 
