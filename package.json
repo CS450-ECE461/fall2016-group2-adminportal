@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "test": "env NODE_ENV=test mocha --recursive tests/tests",
+    "cover": "env NODE_ENV=test istanbul cover _mocha -- --recursive tests/tests",
     "start": "node ./app"
   },
   "dependencies": {
