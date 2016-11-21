@@ -47,8 +47,7 @@ UserCreationController.prototype.createUser = function () {
             // after we get a response, check if there are errors
             .end(function(err, res){
                 if (err) throw err;
-
-                //console.log(res);
+                
                 return res; // make sure we send our results back up.
             })//get back the server response
         ;
