@@ -9,11 +9,11 @@ function initPassport (app) {
     var opts = {name: 'username',password:'password', session: true};
     passport.use (new LocalStrategy (opts, authorize));
     
-    function authorize (username, password, done) {
+    function authorize (email, password, done) {
         var token;
       
         var userData = {
-            "username" : username,
+            "email" : email,
             "password" : password
         };
     
