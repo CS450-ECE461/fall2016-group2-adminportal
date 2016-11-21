@@ -7,4 +7,5 @@ module.exports = exports = {
         get  : {view   : 'join.pug'},
         post : {action : 'JoinController@join'}
     }
+
 };
