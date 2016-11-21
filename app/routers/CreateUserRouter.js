@@ -1,4 +1,4 @@
-var passport = require ('passport')
+var passport = require ('passport');
 
 function isLoggedIn (req,res,next) {
     if (req.isAuthenticated ())
@@ -8,8 +8,8 @@ function isLoggedIn (req,res,next) {
 
 module.exports = exports = {
     '/createUser' : {
-        use: isLoggedIn,
+        //use: isLoggedIn,
         get  : { view   : 'createuser.pug'},
-        post : { action : 'UserCreationController@createUser'}
+        post : { action : 'CreateUserController@createUser'}
     }
 };
