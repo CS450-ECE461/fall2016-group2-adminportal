@@ -15,16 +15,18 @@ JoinController.prototype.join = function () {
 
   return function (req, res) {
 
-      var orgData = {
-        "email": req.body.email,
+      var organization = {
         "name": req.body.name,
         "website": req.body.website,
         "location": req.body.location,
         "industry": req.body.industry
       }
 
+      var user = {
+          "email": req.body.email,
+      }
       .post('localhost:5000/v1/admin/organizations')
-      .send(orgData)
+      .send(organization,user)
       .end(function (err, resp) {
 
                 if (err) {
