@@ -1,5 +1,6 @@
 var passport      = require ('passport')
   , LocalStrategy = require ('passport-local').Strategy
+  , request       = require ('superagent')
   ;
   
 module.exports = initPassport;
@@ -9,11 +10,11 @@ function initPassport (app) {
     var opts = {name: 'username',password:'password', session: true};
     passport.use (new LocalStrategy (opts, authorize));
     
-    function authorize (email, password, done) {
+    function authorize (username, password, done) {
         var token;
-      
+
         var userData = {
-            "email" : email,
+            "email" : username,
             "password" : password
         };
     
