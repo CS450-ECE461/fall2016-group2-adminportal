@@ -31,14 +31,15 @@ JoinController.prototype.join = function () {
         .send({organization: organization,user: user})
         .end(function (err, resp) {
 
-                if (err) {
-                    console.log(err);
-                }
-                else {
-                    console.log("Organization Successfully Registered");
-                    return res.render('login.pug', {message: "Please Check Your Email For Login Info."});
-                }
-            });
+          if (err) {
+            console.log(err);
+            return res.render('join.pug', {message: "Sorry! Something went terribly wrong..."});
+          }
+          else {
+            console.log("Organization Successfully Registered");
+            return res.render('login.pug', {message: "Please Check Your Email For Login Info."});
+          }
+        });
 
   };
 
