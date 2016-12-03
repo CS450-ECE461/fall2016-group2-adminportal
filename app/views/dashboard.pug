@@ -21,12 +21,38 @@ html(lang="en")
             .container(id="tabs")
                 ul.nav.nav-tabs(role="tablist")
                         li.active: a(href="#messages" data-toggle="tab") Messages
-                        li: a(href="#users" data-toggle="tab") Users
+                        li: a(href="#viewusers" data-toggle="tab") View Users
+                        li: a(href="#users" data-toggle="tab") Create Users
                         li:  a(href="#org" data-toggle="tab") Organization
 
                 .tab-content
                         .tab-pane.active(id="messages") Messages
-                        .tab-pane(id="users") Users
+                        .tab-pane(id="viewusers")
+                        .tab-pane(id="users")
+                                      form.form-horizontal(method='post', action ='/users')
+                                        div.form-group
+                                            // UserName
+                                            label.col-sm-2.control-label(for="username") Username:
+                                            div.col-sm-10
+                                                input#username.form-control(type="text", name="username", placeholder="username")
+
+                                            //Password
+                                            label.col-sm-2.control-label(for="password") Password:
+                                            div.col-sm-10
+                                                input#password.form-control(type="password", name = "password")
+
+                                            //Email
+                                            label.col-sm-2.control-label(for="email") Email:
+                                            div.col-sm-10
+                                                input#email.form-control(type="email", name = "email")
+
+                                            //Job title
+                                            label.col-sm-2.control-label(for="job_title") Job Title:
+                                            div.col-sm-10
+                                                input#job_title.form-control(type="text", name = "job_title")
+
+                                        div.form-group
+                                            button.btn.btn-default(type="submit") Create Account
                         .tab-pane(id="org") Organization
-                        
+
         blockquote #{message}
