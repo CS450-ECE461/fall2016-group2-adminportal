@@ -5,11 +5,12 @@
   "private": true,
   "scripts": {
     "test": "env NODE_ENV=test mocha --recursive tests/tests",
+    "cover": "env NODE_ENV=test istanbul cover _mocha -- --recursive tests/tests",
     "start": "node ./app"
   },
   "dependencies": {
-    "@onehilltech/blueprint": "^1.1.1",
-    "@onehilltech/blueprint-mongodb": "^0.9.1",
+    "@onehilltech/blueprint": "1.1.1",
+    "@onehilltech/blueprint-mongodb": "0.9.1",
     "chai": "^3.5.0",
     "mocha": "^3.1.2",
     "passport": "^0.3.2",

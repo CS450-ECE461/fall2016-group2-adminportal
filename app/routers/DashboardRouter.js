@@ -1,4 +1,5 @@
 var passport = require ('passport')
+    ;
 
 function isLoggedIn (req,res,next) {
     if (req.isAuthenticated ())
