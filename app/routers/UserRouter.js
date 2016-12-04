@@ -10,7 +10,6 @@ function isLoggedIn (req,res,next) {
 module.exports = exports = {
   '/users' : {
     use: isLoggedIn,
-    get: { view: 'createuser.pug' },
     post: { action: 'UserController@create' }
   }
 };

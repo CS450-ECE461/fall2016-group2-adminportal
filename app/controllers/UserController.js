@@ -29,9 +29,10 @@ UserController.prototype.create = function () {
       .end  (function (err, resp) {
         if (err) {
           console.log (err);
+          return res.render('dashboard.pug', {message: "Sorry! Unable to create user."})
         } else {
           console.log (resp.body);
-          return res.render('usercreated.pug', {username: resp.body.user.username});
+          return res.render('dashboard.pug', {message: "User created!"});
         }
       });
 
