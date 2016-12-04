@@ -1,0 +1,32 @@
+var blueprint = require ('@onehilltech/blueprint')
+    , request   = require ('superagent')
+    ;
+
+function UserController () {
+    blueprint.BaseController.call (this);
+}
+
+blueprint.controller (UserController);
+
+UserController.prototype.fetch = function () {
+    return function (req, res) {
+        var token = req.user;
+
+        request
+            .get ('localhost:5000/v1/organizations')
+            .set  ('Authorization', 'bearer ' + token)
+            .end  (function (err, resp) {
+                if (err) {
+                    console.log (err);
+                    return res.render('dashboard.pug', {message: "Sorry! Unable to Fetch Organizations."})
+                } else {
+                    console.log (resp.body);
+                    return res.render('dashboard.pug', {message: resp.body.organizations.name});
+                }
+            });
+
+    };
+};
+
+
+module.exports = exports = UserController;
