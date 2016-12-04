@@ -1,6 +1,6 @@
-var blueprint = require ('@onehilltech/blueprint')
+var blueprint = require ('@onehilltech/blueprint'), path = require ('path')
   ;
-  
+
 module.exports = exports = {
   protocols : {
     http : {
@@ -8,6 +8,10 @@ module.exports = exports = {
     }
   },
 
+  statics : [
+  path.resolve(__dirname,'../../public_html')
+  ],
+  
   middleware : {
     validator  : { },
     bodyParser : {
@@ -19,7 +23,7 @@ module.exports = exports = {
       format: 'dev',
       immediate: true
     },
-    
+
     passport: {
       session: {
         serializer: function (token, done) {
@@ -30,7 +34,7 @@ module.exports = exports = {
         }
       }
     },
-    
+
     session: {
       secret: 'ssshhhhh',
       resave: false,

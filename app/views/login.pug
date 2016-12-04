@@ -7,13 +7,12 @@ html(lang="en")
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
 
-    body
-        div.container
-            h1 Admin Login
-
+    body(style='background-color:#3b3f51;font-style:bold;color:#f4b31b;')
+        div.container(align='center')
+            img(style='display: block; margin: auto; width:75%;height:25%; float:top;' src="../assets/hive.png" alt='mainlogo')
             form.form-horizontal(method='post', action='/login')
                 div.form-group
-                    label.col-sm-2.control-label(for="name") Email
+                    label.col-sm-2.control-label(for="name") Username
                     div.col-sm-2
                         input#name.form-control(type="text", name="username", placeholder="")
 
@@ -27,5 +26,3 @@ html(lang="en")
                         button.btn.btn-default(type="submit") Submit
 
         blockquote #{message}
-
-        blockquote Don't have an account? <a href="/join"> Join Hive Now </a>
