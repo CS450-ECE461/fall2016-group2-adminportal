@@ -24,7 +24,6 @@ html(lang="en")
                         li: a(href="#viewusers" data-toggle="tab") View Users
                         li: a(href="#users" data-toggle="tab") Create Users
                         li:  a(href="#org" data-toggle="tab") Organization
-                        li: a(href="#contacts" data-toggle="tab") Contacts
 
                 .tab-content
                         .tab-pane.active(id="messages") Messages
@@ -55,9 +54,9 @@ html(lang="en")
                                         div.form-group
                                             button.btn.btn-default(type="submit") Create Account
                         .tab-pane(id="org") Organization
-                        .tab-pane(id="contacts") Contacts
                                         div.container
                                             ul(id="contact-list")
                                         include organizationlist.pug
+
 
         blockquote #{message}
