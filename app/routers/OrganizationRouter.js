@@ -8,8 +8,8 @@ function isLoggedIn (req,res,next) {
 }
 
 module.exports = exports = {
-    '/fetch' : {
+    '/organization' : {
         use: isLoggedIn,
-        get: { action: 'FetchController@fetch' }
+        get: { action: 'OrganizationController@fetch' }
     }
 };

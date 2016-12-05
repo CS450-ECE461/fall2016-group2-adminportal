@@ -2,13 +2,13 @@ var blueprint = require ('@onehilltech/blueprint')
     , request   = require ('superagent')
     ;
 
-function UserController () {
+function OrganizationController () {
     blueprint.BaseController.call (this);
 }
 
-blueprint.controller (UserController);
+blueprint.controller (OrganizationController);
 
-UserController.prototype.fetch = function () {
+OrganizationController.prototype.fetch = function () {
     return function (req, res) {
         var token = req.user;
 
@@ -35,4 +35,4 @@ UserController.prototype.fetch = function () {
 };
 
 
-module.exports = exports = UserController;
+module.exports = exports = OrganizationController;
