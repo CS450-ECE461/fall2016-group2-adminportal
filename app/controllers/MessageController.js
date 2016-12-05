@@ -26,7 +26,7 @@ MessageController.prototype.fetch = function () {
                     var messages = {};
                     for (var x in resp.body) {
                         messages[x] = resp.body[x];
-                        console.log(resp.body[x].content);
+
                     }
 
                     return res.render('dashboard.pug',{messages: messages});
