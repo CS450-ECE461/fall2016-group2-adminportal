@@ -27,8 +27,8 @@ MessageController.prototype.fetch = function () {
                 for (var x in resp.body.messages) {
                     list[x] = resp.body.messages[x];
                 }
-                console.log(list);
-                return res.render('messages.pug',{list: list});
+                console.log(resp.body.messages);
+                return res.render('dashboard.pug',{list: list});
             }
         });
     };

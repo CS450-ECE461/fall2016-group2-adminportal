@@ -14,6 +14,6 @@ function isLoggedIn (req,res,next) {
 module.exports = exports = {
     '/messages' : {
         use: isLoggedIn,
-        get: { action : 'MessageController@FetchMessages'}
+        get: { action : 'MessageController@fetch'}
     }
 };
