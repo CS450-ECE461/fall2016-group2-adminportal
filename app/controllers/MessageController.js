@@ -23,12 +23,13 @@ MessageController.prototype.fetch = function () {
                     console.log(err);
                     return res.render('dashboard.pug',{message: "Unable to fetch messages."});
                 } else {
-                    var list = {};
-                    for (var x in resp.body.messages) {
-                        list[x] = resp.body.messages[x];
+                    var messages = {};
+                    for (var x in resp.body) {
+                        messages[x] = resp.body[x];
+                        console.log(resp.body[x].content);
                     }
-                    console.log(resp.body.messages);
-                    return res.render('dashboard.pug',{list: list});
+
+                    return res.render('dashboard.pug',{messages: messages});
                 }
         });
     };
