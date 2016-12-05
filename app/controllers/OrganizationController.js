@@ -18,7 +18,7 @@ OrganizationController.prototype.fetch = function () {
             .end  (function (err, resp) {
                 if (err) {
                     console.log (err);
-                    return res.render('dashboard.pug', {message: "Sorry! Unable to Fetch Organizations."})
+                    return res.status(200).json({message: "Sorry! Unable to Fetch Organizations."});
                 } else {
 
                     // Build list of Organizations
