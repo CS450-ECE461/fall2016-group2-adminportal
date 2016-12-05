@@ -20,8 +20,14 @@ UserController.prototype.fetch = function () {
                     console.log (err);
                     return res.render('dashboard.pug', {message: "Sorry! Unable to Fetch Organizations."})
                 } else {
-                    console.log (resp.body);
-                    return res.render('dashboard.pug', {message: resp.body.organizations.name});
+
+                    // Build list of Organizations
+                    var list = "";
+                    for (var x in resp.body.organizations){
+                        list = list + resp.body.organizations[x].name + ' ';
+                    }
+
+                    return res.render('dashboard.pug', {message: list});
                 }
             });
 
