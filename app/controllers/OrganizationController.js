@@ -26,8 +26,7 @@ OrganizationController.prototype.fetch = function () {
                     for (var x in resp.body.organizations){
                         list[x] = resp.body.organizations[x].name;
                     }
-                    console.log(list);
-                    return res.render('organizationlist.pug', {list: list});
+                    return res.status(200).json(list);
                 }
             });
 
