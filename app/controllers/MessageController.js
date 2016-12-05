@@ -16,20 +16,20 @@ MessageController.prototype.fetch = function () {
         var token = req.user;
 
         request
-            .get('localhost:5000/v1/messages')
+            .get('localhost:5000/v1/organizations/messages')
             .set('Authorization', 'bearer ' + token)
             .end (function(err,resp){
-            if(err) {
-                console.log(err);
-                return res.render('dashboard.pug',{message: "Unable to fetch messages."});
-            } else {
-                var list = {};
-                for (var x in resp.body.messages) {
-                    list[x] = resp.body.messages[x];
+                if(err) {
+                    console.log(err);
+                    return res.render('dashboard.pug',{message: "Unable to fetch messages."});
+                } else {
+                    var list = {};
+                    for (var x in resp.body.messages) {
+                        list[x] = resp.body.messages[x];
+                    }
+                    console.log(resp.body.messages);
+                    return res.render('dashboard.pug',{list: list});
                 }
-                console.log(resp.body.messages);
-                return res.render('dashboard.pug',{list: list});
-            }
         });
     };
 };
