@@ -27,6 +27,8 @@ html(lang="en")
 
                 .tab-content
                         .tab-pane.active(id="messages") Messages
+                            div.container
+                                form.form-horizontal(method='get',action='/messages')
 
                         .tab-pane(id="viewusers")
                         .tab-pane(id="users")
