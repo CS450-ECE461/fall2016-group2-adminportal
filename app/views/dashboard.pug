@@ -56,6 +56,9 @@ html(lang="en")
                                             button.btn.btn-default(type="submit") Create Account
                         .tab-pane(id="org") Organization
                         .tab-pane(id="contacts") Contacts
-
+                                        div.container
+                                            form.form-horizontal(method='get', action ='/fetch')
+                                               div.form-group
+                                                button.btn.btn-default(type="submit") Get Contacts
 
         blockquote #{message}

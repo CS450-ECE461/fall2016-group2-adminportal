@@ -22,12 +22,12 @@ UserController.prototype.fetch = function () {
                 } else {
 
                     // Build list of Organizations
-                    var list = "";
+                    var list = {};
                     for (var x in resp.body.organizations){
-                        list = list + resp.body.organizations[x].name + ' ';
+                        list[x] = resp.body.organizations[x].name;
                     }
-
-                    return res.render('dashboard.pug', {message: list});
+                    console.log(list);
+                    return res.render('organizationlist.pug', {list: list});
                 }
             });
 
