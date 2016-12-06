@@ -25,9 +25,12 @@ describe ('DashboardRouter', function () {
                     .post('/login')
                     .send({username : 'test@test.com',
                         password : 'test'})
-                    .expect('Location', '/dashboard', done)
+                    .expect('Location', '/dashboard')
 
                     ;
+                request(blueprint.app.server.app)
+                    .get('/dashboard')
+                    .expect(302, done);
 
 
             });
