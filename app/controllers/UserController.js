@@ -38,5 +38,30 @@ UserController.prototype.create = function () {
   };
 };
 
+UserController.prototype.fetch = function () {
+    return function (req, res) {
+        var token = req.user;
+
+        request
+            .get ('localhost:5000/v1/organizations/users')
+            .set  ('Authorization', 'bearer ' + token)
+            .end  (function (err, resp) {
+                if (err) {
+                    console.log (err);
+                    return res.status(200).json({message: "Sorry! Unable to find Users."});
+                } else {
+
+                    // Build list of Users
+                    var list = {};
+
+                    for (var x in resp.body.users){
+                        list[x] = resp.body.users[x].email;
+                    }
+                    return res.status(200).json(list);
+                }
+            });
+
+    };
+};
 
 module.exports = exports = UserController;

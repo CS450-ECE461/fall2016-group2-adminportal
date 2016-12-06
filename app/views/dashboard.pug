@@ -8,7 +8,7 @@ html(lang="en")
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
 
-    body
+    body(style='background-color:#3b3f51;font-style:bold;color:#f4b31b;')
         div.container
             h1 You have now logged in!
 
@@ -28,6 +28,9 @@ html(lang="en")
                 .tab-content
                         .tab-pane.active(id="messages") Messages
                         .tab-pane(id="viewusers")
+                                    div.container
+                                        ul(id="user-list")
+                                    include userlist.pug
                         .tab-pane(id="users")
                                       form.form-horizontal(method='post', action ='/users')
                                         div.form-group
