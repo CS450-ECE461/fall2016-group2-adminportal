@@ -3,10 +3,10 @@ table {
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #e7e5e5;
 }
 
-td {
+td, th {
     height: 50px;
     vertical-align: bottom;
     padding: 10px;
