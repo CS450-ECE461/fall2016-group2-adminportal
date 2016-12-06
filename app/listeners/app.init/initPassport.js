@@ -17,9 +17,14 @@ function initPassport (app) {
             "email" : username,
             "password" : password
         };
-    
+        var route = 'localhost:5000/admin/login';
+
+        if(process.env.NODE_ENV == 'test'){
+            route = 'localhost:5001/mock/loginTest';
+
+        }
         request
-            .post('localhost:5000/admin/login')
+            .post(route)
             .send(userData)
             .end(function (err, resp) {
                 if (err) {
@@ -35,7 +40,7 @@ function initPassport (app) {
                 }
 
                 return done (null, token);
-            
+
         });   
     }
 }
