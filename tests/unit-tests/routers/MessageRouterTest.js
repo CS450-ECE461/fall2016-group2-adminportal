@@ -3,7 +3,7 @@ var blueprint = require ('@onehilltech/blueprint')
     , expect = require ('chai').expect
     ;
 
-var appPath = require ('../../../fixtures/appPath');
+var appPath = require ('../../fixtures/appPath');
 
 describe ('MessageRouter', function () {
     before (function (done) {
