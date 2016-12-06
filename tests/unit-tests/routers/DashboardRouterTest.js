@@ -35,3 +35,16 @@ describe ('DashboardRouter', function () {
         });
     });
 });
+
+function loginUser() {
+    return function(done) {
+        request(blueprint.app.server.app)
+            .post('/login')
+            .send({username : 'test@test.com',
+                password : 'test'})
+            .end(function(err, res){
+                if(err) return done(err);
+                return done();
+            })
+    }
+}
