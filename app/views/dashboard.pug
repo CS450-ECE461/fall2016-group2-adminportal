@@ -27,6 +27,11 @@ html(lang="en")
 
                 .tab-content
                         .tab-pane.active(id="messages") Messages
+                            div.container
+                                form.form-horizontal(method='get',action='/messages')
+                                    div.form-group
+                                        button.btn.btn-default(type="submit") Pull Messages
+
                         .tab-pane(id="viewusers")
                         .tab-pane(id="users")
                                       form.form-horizontal(method='post', action ='/users')
@@ -54,5 +59,7 @@ html(lang="en")
                                         div.form-group
                                             button.btn.btn-default(type="submit") Create Account
                         .tab-pane(id="org") Organization
+
+
 
         blockquote #{message}
