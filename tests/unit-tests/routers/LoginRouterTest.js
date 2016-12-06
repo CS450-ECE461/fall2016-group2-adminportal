@@ -13,7 +13,7 @@ describe ('LoginRouter', function () {
     describe ('/login',function() {
         describe ('GET', function () {
             it ('check if this router routed correctly',function (done) {
-                request(bluepring.app.server.app)
+                request(blueprint.app.server.app)
                     .get('/login')
                     .expect (200, done);
             });
