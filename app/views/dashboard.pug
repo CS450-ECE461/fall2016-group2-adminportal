@@ -22,6 +22,11 @@ html(lang="en")
 
                 .tab-content
                         .tab-pane.active(id="messages") Messages
+                            div.container
+                                form.form-horizontal(method='get',action='/messages')
+                                    div.form-group
+                                        button.btn.btn-default(type="submit") Pull Messages
+
                         .tab-pane(id="viewusers")
                                     div.container
                                         table(id="user-list" style='border-collapse:collapse;border: 1px solid black;')
@@ -51,10 +56,15 @@ html(lang="en")
 
                                         div.form-group
                                             button.btn.btn-default(type="submit") Create Account
+<<<<<<< HEAD
                         .tab-pane(id="org")
                                         div.container
                                             table(id="contact-list")
                                         include organizationlist.pug
+=======
+                        .tab-pane(id="org") Organization
+
+>>>>>>> development
 
         div.container
            h1 You have now logged in!
