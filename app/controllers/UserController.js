@@ -53,9 +53,8 @@ UserController.prototype.fetch = function () {
 
                     // Build list of Users
                     var list = {};
-
-                    for (var x in resp.body.users){
-                        list[x] = resp.body.users[x].email;
+                    for (var x in resp.body){
+                        list[x] = resp.body[x].username;
                     }
                     return res.status(200).json(list);
                 }
