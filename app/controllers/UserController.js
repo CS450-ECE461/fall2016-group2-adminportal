@@ -50,13 +50,7 @@ UserController.prototype.fetch = function () {
                     console.log (err);
                     return res.status(200).json({message: "Sorry! Unable to find Users."});
                 } else {
-
-                    // Build list of Users
-                    var list = {};
-                    for (var x in resp.body){
-                        list[x] = resp.body[x].username;
-                    }
-                    return res.status(200).json(list);
+                    return res.status(200).json(resp.body);
                 }
             });
 

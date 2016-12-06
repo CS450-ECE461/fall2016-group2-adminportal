@@ -1,7 +1,7 @@
 $.getJSON( "/users", function( data ) {
-    $.each( data, function( key, val ) {
+    $.each( data, function( index, item ) {
         // if your IDE complains about this, ignore it, it is wrong
-        $( "#user-list").append("<li id='" + key + "'>" + val + "</li>" );
-        //$('#user-list tr:last').after('<tr>' key '</tr><tr>'val'</tr>');
+        //$( "#user-list").append("<li id='" + key + "'>" + val + "</li>" );
+        $("#user-list").append("<tr> id='" + index + "'><td>" + item.username + "</td><td>" + item.email + "</td><td>" + item.job_title +"</td></tr>");
     });
 });
