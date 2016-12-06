@@ -12,10 +12,20 @@ describe ('DashboardRouter', function () {
 
     describe ('/dashboard',function() {
         describe ('GET', function () {
-            it ('check if this router routed correctly',function (done) {
+            it ('check if this router redirects when there is no token',function (done) {
+
                 request(blueprint.app.server.app)
                     .get('/dashboard')
-                    .expect (200, done);
+                    .expect (302, done);
+            });
+
+            it ('check if this router routes correctly when there is a token', function(done) {
+
+                request(blueprint.app.server.app)
+                    .post('/login')
+
+                    .expect (200,done);
+
             });
         });
     });

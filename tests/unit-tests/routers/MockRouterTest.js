@@ -5,17 +5,17 @@ var blueprint = require ('@onehilltech/blueprint')
 
 var appPath = require ('../../fixtures/appPath');
 
-describe ('MessageRouter', function () {
+describe ('MockRouter', function () {
     before (function (done) {
         blueprint.testing.createApplicationAndStart(appPath,done)
     });
 
-    describe ('/messages',function() {
-        describe ('GET', function () {
-            it ('check if this router redirects if there is no token',function (done) {
+    describe ('/mock/loginTest',function() {
+        describe ('POST', function () {
+            it ('check if this router routed correctly',function (done) {
                 request(blueprint.app.server.app)
-                    .get('/messages')
-                    .expect (302, done);
+                    .post('/mock/loginTest')
+                    .expect (200, done);
             });
         });
     });

@@ -12,10 +12,10 @@ describe ('UserRouter', function () {
 
     describe ('/users',function() {
         describe ('GET', function () {
-            it ('check if this router routed correctly',function (done) {
+            it ('check if this router redirects if there is no token',function (done) {
                 request(blueprint.app.server.app)
                     .get('/users')
-                    .expect (200, done);
+                    .expect (302, done);
             });
         });
     });

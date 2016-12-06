@@ -7,7 +7,8 @@
     "test": "env NODE_ENV=test mocha --recursive tests",
     "cover": "env NODE_ENV=test istanbul cover _mocha -- --recursive tests",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "start": "node ./app"
+    "dev": "env NODE_ENV=development node ./app",
+    "prod": "env NODE_ENV=production node ./app"
   },
   "dependencies": {
     "@onehilltech/blueprint": "1.1.1",
