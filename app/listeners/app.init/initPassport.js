@@ -20,7 +20,8 @@ function initPassport (app) {
         var route = 'localhost:5000/admin/login';
 
         if(process.env.NODE_ENV == 'test'){
-            route = '/mock/loginTest';
+            route = 'localhost:5001/mock/loginTest';
+
         }
         request
             .post(route)
