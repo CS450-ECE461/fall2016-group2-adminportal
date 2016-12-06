@@ -25,10 +25,9 @@ describe ('DashboardRouter', function () {
                     .post('/login')
                     .send({username : 'test@test.com',
                         password : 'test'})
-                    .expect('Location', '/dashboard')
+                    .expect('Location', '/dashboard', done)
 
                     ;
-                    done();
 
 
             });
