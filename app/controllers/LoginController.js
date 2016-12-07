@@ -1,6 +1,5 @@
 var blueprint = require ('@onehilltech/blueprint')
-    request   = require ('superagent')
-  , util      = require ('util')
+  , request   = require ('superagent')
   ;
 
 function LoginController () {
@@ -16,6 +15,5 @@ LoginController.prototype.login = function () {
 
   };
 };
-
 
 module.exports = exports = LoginController;

@@ -17,7 +17,8 @@ function initPassport (app) {
             "email" : username,
             "password" : password
         };
-        var route = 'localhost:5000/admin/login';
+
+        var route = app.configs.apiserver.module.baseuri + '/admin/login';
 
         if(process.env.NODE_ENV == 'test'){
             route = 'localhost:5001/mock/loginTest';

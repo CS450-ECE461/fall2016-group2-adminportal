@@ -1,6 +1,6 @@
 var blueprint = require ('@onehilltech/blueprint')
   , request   = require ('superagent')
-;
+  ;
 
 function UserController () {
   blueprint.BaseController.call (this);
@@ -23,7 +23,7 @@ UserController.prototype.create = function () {
     };
 
     request
-      .post ('localhost:5000/v1/admin/users')
+      .post (blueprint.app.configs.apiserver.baseuri + '/v1/admin/users')
       .send (userData)
       .set  ('Authorization', 'bearer ' + token)
       .end  (function (err, resp) {
@@ -43,7 +43,7 @@ UserController.prototype.fetch = function () {
         var token = req.user;
 
         request
-            .get ('localhost:5000/v1/organizations/users')
+            .get (blueprint.app.configs.apiserver.module.baseuri + '/v1/organizations/users')
             .set  ('Authorization', 'bearer ' + token)
             .end  (function (err, resp) {
                 if (err) {
