@@ -1,4 +1,5 @@
-var passport      = require ('passport')
+var blueprint     = require ('@onehilltech/blueprint')
+  , passport      = require ('passport')
   , LocalStrategy = require ('passport-local').Strategy
   , request       = require ('superagent')
   ;
@@ -17,6 +18,8 @@ function initPassport (app) {
             "email" : username,
             "password" : password
         };
+
+        console.log(app.configs);
 
         var route = app.configs.apiserver.module.baseuri + '/admin/login';
 
