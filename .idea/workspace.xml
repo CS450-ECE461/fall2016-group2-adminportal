@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="361f2f5b-5ae1-46cd-a60a-3b6984b2ea6c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/assets/Account2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/assets/Contacts2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/assets/background.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/assets/calendar2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/assets/hive-logo2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/assets/notifications2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/assets/sent2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/AdminPortal.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/default.pug" afterPath="$PROJECT_DIR$/app/views/default.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -410,12 +398,20 @@
       <workItem from="1480888378548" duration="502000" />
       <workItem from="1480888903600" duration="2432000" />
       <workItem from="1480911977220" duration="1172000" />
-      <workItem from="1481078312606" duration="603000" />
+      <workItem from="1481078312606" duration="661000" />
     </task>
+    <task id="LOCAL-00001" summary="add honeycomb to landing page">
+      <created>1481080285373</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1481080285373</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4709000" />
+    <option name="totallyTimeSpent" value="4767000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -445,6 +441,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add honeycomb to landing page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add honeycomb to landing page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
