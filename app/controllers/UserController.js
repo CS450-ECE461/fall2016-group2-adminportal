@@ -23,7 +23,7 @@ UserController.prototype.create = function () {
     };
 
     request
-      .post (blueprint.app.configs.apiserver.baseuri + '/v1/admin/users')
+      .post (blueprint.app.configs.apiserver.module.baseuri + '/v1/admin/users')
       .send (userData)
       .set  ('Authorization', 'bearer ' + token)
       .end  (function (err, resp) {
