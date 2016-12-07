@@ -22,14 +22,12 @@ html(lang="en")
 
                 .tab-content
                         .tab-pane.active(id="messages") Messages
-                            div.container
-                                form.form-horizontal(method='get',action='/messages')
-                                    div.form-group
-                                        button.btn.btn-default(type="submit") Pull Messages
-
+                                  div.container
+                                        table(id="message-list")
+                                  include messagelist.pug
                         .tab-pane(id="viewusers")
                                     div.container
-                                        table(id="user-list" style='border-collapse:collapse;border: 1px solid black;')
+                                        table(id="user-list")
                                     include userlist.pug
                         .tab-pane(id="users")
                                       form.form-horizontal(method='post', action ='/users')

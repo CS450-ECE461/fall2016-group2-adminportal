@@ -23,13 +23,7 @@ MessageController.prototype.fetch = function () {
                     console.log(err);
                     return res.render('dashboard.pug',{message: "Unable to fetch messages."});
                 } else {
-                    var messages = {};
-                    for (var x in resp.body) {
-                        messages[x] = resp.body[x];
-
-                    }
-
-                    return res.render('dashboard.pug',{messages: messages});
+                    return res.status(200).json(resp.body);
                 }
         });
     };
