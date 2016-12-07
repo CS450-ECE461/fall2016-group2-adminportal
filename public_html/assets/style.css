@@ -1,0 +1,15 @@
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #e7e5e5;
+}
+
+td, th {
+    height: 50px;
+    vertical-align: bottom;
+    padding: 10px;
+}
+
+tr:hover{background-color:#6b7687}

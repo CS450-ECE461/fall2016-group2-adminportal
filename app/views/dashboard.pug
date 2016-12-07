@@ -5,18 +5,13 @@ html(lang="en")
 
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+        link(rel='stylesheet', href='../assets/style.css')
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
 
-    body
+    body(style='background-color:#3b3f51;font-style:bold;color:#f4b31b;')
+
         div.container
-            h1 You have now logged in!
-
-            form.form-horizontal(method='post', action='/dashboard')
-                div.col-sm-offset-2.col-sm-10
-                    button.btn.btn-default(type="submit") Logout
-
-        .container
             h1 Dashboard
             .container(id="tabs")
                 ul.nav.nav-tabs(role="tablist")
@@ -27,12 +22,13 @@ html(lang="en")
 
                 .tab-content
                         .tab-pane.active(id="messages") Messages
-                            div.container
-                                form.form-horizontal(method='get',action='/messages')
-                                    div.form-group
-                                        button.btn.btn-default(type="submit") Pull Messages
-
+                                  div.container
+                                        table(id="message-list")
+                                  include messagelist.pug
                         .tab-pane(id="viewusers")
+                                    div.container
+                                        table(id="user-list")
+                                    include userlist.pug
                         .tab-pane(id="users")
                                       form.form-horizontal(method='post', action ='/users')
                                         div.form-group
@@ -58,8 +54,21 @@ html(lang="en")
 
                                         div.form-group
                                             button.btn.btn-default(type="submit") Create Account
+
+                        .tab-pane(id="org")
+                                        div.container
+                                            table(id="contact-list")
+                                        include organizationlist.pug
+
                         .tab-pane(id="org") Organization
 
 
+
+        div.container
+           h1 You have now logged in!
+
+            form.form-horizontal(method='post', action='/dashboard')
+                div.col-sm-offset-2.col-sm-10
+                    button.btn.btn-default(type="submit") Logout
 
         blockquote #{message}

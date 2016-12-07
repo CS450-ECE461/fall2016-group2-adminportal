@@ -16,20 +16,14 @@ MessageController.prototype.fetch = function () {
         var token = req.user;
 
         request
-            .get('localhost:5000/v1/organizations/messages')
+            .get('localhost:5000/v1/admin/organizations/messages')
             .set('Authorization', 'bearer ' + token)
             .end (function(err,resp){
                 if(err) {
                     console.log(err);
                     return res.render('dashboard.pug',{message: "Unable to fetch messages."});
                 } else {
-                    var messages = {};
-                    for (var x in resp.body) {
-                        messages[x] = resp.body[x];
-
-                    }
-
-                    return res.render('dashboard.pug',{messages: messages});
+                    return res.status(200).json(resp.body);
                 }
         });
     };
