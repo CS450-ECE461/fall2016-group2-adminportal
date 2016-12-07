@@ -1,3 +1,7 @@
+/**
+ * Created by eburgun on 12/4/16.
+ */
+
 var passport = require ('passport')
     ;
 
@@ -8,9 +12,8 @@ function isLoggedIn (req,res,next) {
 }
 
 module.exports = exports = {
-    '/dashboard' : {
+    '/messages' : {
         use: isLoggedIn,
-        get  : { view   : 'dashboard.pug'},
-        post : { action : 'DashboardController@logout'}
+        get: { action : 'MessageController@fetch'}
     }
 };

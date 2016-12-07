@@ -4,14 +4,20 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "test": "env NODE_ENV=test mocha --recursive tests/tests",
-    "start": "node ./app"
+    "test": "env NODE_ENV=test mocha --recursive tests",
+    "cover": "env NODE_ENV=test istanbul cover _mocha -- --recursive tests",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "dev": "env NODE_ENV=development node ./app",
+    "prod": "env NODE_ENV=production node ./app"
   },
   "dependencies": {
-    "@onehilltech/blueprint": "^1.1.1",
-    "@onehilltech/blueprint-mongodb": "^0.9.1",
+    "@onehilltech/blueprint": "1.1.1",
+    "@onehilltech/blueprint-mongodb": "0.9.1",
     "chai": "^3.5.0",
+    "coveralls": "^2.11.14",
+    "istanbul": "^0.4.5",
     "mocha": "^3.1.2",
+    "mocha-lcov-reporter": "^1.2.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "superagent": "^2.3.0",

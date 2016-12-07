@@ -1,5 +1,7 @@
-var passport      = require ('passport')
+var blueprint     = require ('@onehilltech/blueprint')
+  , passport      = require ('passport')
   , LocalStrategy = require ('passport-local').Strategy
+  , request       = require ('superagent')
   ;
   
 module.exports = initPassport;
@@ -11,30 +13,36 @@ function initPassport (app) {
     
     function authorize (username, password, done) {
         var token;
-      
+
         var userData = {
-            "username" : username,
+            "email" : username,
             "password" : password
         };
-    
+
+        var route = app.configs.apiserver.module.baseuri + '/admin/login';
+
+        if(process.env.NODE_ENV == 'test'){
+            route = 'localhost:5001/mock/loginTest';
+
+        }
         request
-            .post('localhost:5000/admin/login')
+            .post(route)
             .send(userData)
             .end(function (err, resp) {
-            if(err) {
-                if (err.status == '400') {
-                    return done (null,false,{message: "Password is incorrect."});
-                } else if (err.status == '401') {
-                    return done (null,false,{message: "User is not an admin."});
+                if (err) {
+                    if (err.status == '400') {
+                        return done (null, false, {message: "Password is incorrect."});
+                    } else if (err.status == '403') {
+                        return done (null, false, {message: "User is not an admin."});
+                    }
+
+                    return done (err, false);
+                } else {
+                    token = resp.body.token;
                 }
-                    
-                return done (err,false);
-                
-            }else {
-                token = resp.body.token;
-            }
-            return done (null,token);
-            
+
+                return done (null, token);
+
         });   
     }
 }
