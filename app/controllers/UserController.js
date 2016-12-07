@@ -47,7 +47,6 @@ UserController.prototype.fetch = function () {
             .set  ('Authorization', 'bearer ' + token)
             .end  (function (err, resp) {
                 if (err) {
-                    console.log (err);
                     return res.status(200).json({message: "Sorry! Unable to find Users."});
                 } else {
                     return res.status(200).json(resp.body);
