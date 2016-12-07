@@ -1,6 +1,5 @@
 var blueprint = require ('@onehilltech/blueprint')
-    request   = require ('superagent')
-  , util      = require ('util')
+  , request   = require ('superagent')
   ;
 
 function JoinController () {
@@ -20,14 +19,14 @@ JoinController.prototype.join = function () {
         "website": req.body.website,
         "location": req.body.location,
         "industry": req.body.industry
-      }
+      };
 
       var user = {
-          "email": req.body.email,
-      }
+          "email": req.body.email
+      };
 
       request
-        .post('localhost:5000/organizations')
+        .post(blueprint.app.configs.apiserver.module.baseuri + '/organizations')
         .send({organization: organization,user: user})
         .end(function (err, resp) {
 
@@ -40,10 +39,7 @@ JoinController.prototype.join = function () {
             return res.render('login.pug', {message: "Please Check Your Email For Login Info."});
           }
         });
-
   };
-
 };
-
 
 module.exports = exports = JoinController;

@@ -13,7 +13,7 @@ OrganizationController.prototype.fetch = function () {
         var token = req.user;
 
         request
-            .get ('localhost:5000/v1/organizations')
+            .get (blueprint.app.configs.apiserver.module.baseuri + '/v1/organizations')
             .set  ('Authorization', 'bearer ' + token)
             .end  (function (err, resp) {
                 if (err) {
@@ -23,9 +23,7 @@ OrganizationController.prototype.fetch = function () {
                     return res.status(200).json(resp.body.organizations);
                 }
             });
-
     };
 };
-
 
 module.exports = exports = OrganizationController;
