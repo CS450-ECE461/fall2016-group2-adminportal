@@ -1,4 +1,5 @@
-var passport      = require ('passport')
+var blueprint     = require ('@onehilltech/blueprint')
+  , passport      = require ('passport')
   , LocalStrategy = require ('passport-local').Strategy
   , request       = require ('superagent')
   ;
