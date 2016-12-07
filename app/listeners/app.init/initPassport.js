@@ -19,8 +19,6 @@ function initPassport (app) {
             "password" : password
         };
 
-        console.log(app.configs);
-
         var route = app.configs.apiserver.module.baseuri + '/admin/login';
 
         if(process.env.NODE_ENV == 'test'){
