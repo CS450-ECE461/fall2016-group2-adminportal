@@ -1,16 +1,17 @@
 doctype html
 html(lang="en")
     head
-        title Default
+        title Landing
 
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
 
-    body
-        div.container
-            h1 Default
+    body(style='width:100%;height:100%;background-image:url("../assets/background.png")')
+        div.container(style='position:absolute;width:100%;height:20%;left:0%;top:40%;')
 
-            //automatically redirect to login if no valid session, but redirect to loggedin if there is a vlaid session
-            form.form-horizontal(method='post', action='/')
+            h1(style='text-align:center;') Landing
+
+            //automatically redirect to login if no valid session, but redirect to logged in if there is a valid session
+            form.form-horizontal(method='post', action='/', style='text-align:center;')
                 button.btn.btn-default(type="submit") Go To Login
