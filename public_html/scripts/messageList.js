@@ -1,4 +1,4 @@
-$.getJSON( "/organization", function( data ) {
+$.getJSON( "/messages", function( data ) {
     $("#message-list").append("<tr> <th> Sender </th> <th> Recipient </th> <th> Content </th> </tr>");
     $.each( data, function( index, item ) {
         // if your IDE complains about this, ignore it, it is wrong

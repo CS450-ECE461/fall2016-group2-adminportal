@@ -16,7 +16,7 @@ MessageController.prototype.fetch = function () {
         var token = req.user;
 
         request
-            .get('localhost:5000/v1/organizations/messages')
+            .get('localhost:5000/v1/admin/organizations/messages')
             .set('Authorization', 'bearer ' + token)
             .end (function(err,resp){
                 if(err) {
