@@ -23,11 +23,11 @@ html(lang="en")
                 .tab-content
                         .tab-pane.active(id="messages") Messages
                                   div.container
-                                        table(id="message-list")
+                                        table.table.table-hover(id="message-list")
                                   include messagelist.pug
                         .tab-pane(id="viewusers")
                                     div.container
-                                        table(id="user-list")
+                                        table.table.table-hover(id="user-list")
                                     include userlist.pug
                         .tab-pane(id="users")
                                       form.form-horizontal(method='post', action ='/users')
@@ -57,7 +57,7 @@ html(lang="en")
 
                         .tab-pane(id="org") Organization
                             div.container
-                                table(id="contact-list")
+                                table(id="org-list")
                                 include organizationlist.pug
 
         div.container
