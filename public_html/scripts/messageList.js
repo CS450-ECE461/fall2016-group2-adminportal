@@ -1,6 +1,18 @@
-$.getJSON( "/messages", function( data ) {
-    $("#message-list").append("<tr> <th> Sender </th> <th> Recipient </th> <th> Content </th> </tr>");
-    $.each( data, function( index, item ) {
-        $("#message-list").append("<tr> id='" + index + "'><td>" + item.sender_email + "</td><td>" + item.receiver_email + "</td><td>" + item.content +"</td></tr>");
-    });
+$.getJSON( "/messages", function( messages ) {
+  $("#message-list").append ("<thead>" +
+    "<tr>" +
+    "<th> Sender </th>" +
+    "<th> Receiver </th>" +
+    "<th> Title </th>" +
+    "<th> Content </th>" +
+    "</tr>" +
+    "</thead>");
+  $.each (messages, function (index, message) {
+    $("#message-list").append ("<tr id='" + index + "'>" +
+      "<td>" + message.sender + "</td>" +
+      "<td>" + message.receiver + "</td>" +
+      "<td>" + message.title + "</td>" +
+      "<td>" + message.content + "</td>" +
+      "</tr>");
+  });
 });

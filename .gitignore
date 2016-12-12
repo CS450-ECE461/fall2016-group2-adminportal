@@ -42,3 +42,4 @@ app/temp
 
 # JetBrain files
 .idea
+.idea/*
